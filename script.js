@@ -44,8 +44,8 @@ const toTopIcon = $('.to-top-icon')
 
 $(window).scroll(()=> {
     const scrollPosition = $(window).scrollTop();
-    console.log("Scroll Position:", scrollPosition)
-    console.log("Navbar Offset:", navbarOffset);
+    //console.log("Scroll Position:", scrollPosition)
+    //console.log("Navbar Offset:", navbarOffset);
     
     if (scrollPosition >= navbarOffset) {
         navbar.addClass('sticky');
@@ -87,7 +87,7 @@ searchForm.on('click', (event) => {
     }
 })
 
-$(document).ready(function () {
+$(document).ready( () => {
     $("#video-container").on("click",()=> {
         const videoId = $(this).data("video-id");
         const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
@@ -100,7 +100,14 @@ $(document).ready(function () {
         $("#video-modal").fadeOut();
         $("#video-frame").attr("src", "");
     });
+
+    $('.client-slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true,
+        arrows: false,
+        dots: false
+    });
 });
-
-
-
