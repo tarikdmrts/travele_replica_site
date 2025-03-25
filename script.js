@@ -110,4 +110,18 @@ $(document).ready( () => {
         arrows: false,
         dots: false
     });
+    
+    $('.testimonial-slider').slick({
+        dots: true,
+        arrows: false,
+        infinite: true, 
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        adaptiveHeight: true 
+    });
+
+    $('.slick-dots').appendTo('.dots-container');
 });
