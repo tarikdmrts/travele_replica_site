@@ -124,4 +124,28 @@ $(document).ready( () => {
     });
 
     $('.slick-dots').appendTo('.dots-container');
+
+    $('.menu-link-container').on('click',()=> {
+        $('.slicknav_nav').toggleClass('slicknav_visible')
+    })
+
+    $('.slicknav_nav .menu-item-has-children').on('click', (e) => {
+        e.stopPropagation();
+      });
+
+      $('.mobile-menu-container .slicknav_row .slicknav_item').on('click', function() {
+        $(this).closest('li').children('ul').toggleClass('slicknav_visible');
+    });
+
+    $('.mobile-menu-container .slicknav_row .slicknav_item').on('click', function() {
+        var $this = $(this);
+        var $ul = $this.closest('li').children('ul');
+    
+        if ($ul.hasClass('slicknav_visible')) {
+            $this.find('.slicknav_arrow i').removeClass('fa-plus').addClass('fa-minus');
+        } else {
+            $this.find('.slicknav_arrow i').removeClass('fa-minus').addClass('fa-plus');
+        }
+    });
+
 });
