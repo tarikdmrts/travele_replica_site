@@ -39,17 +39,16 @@ prevBtn.on('click', () => {
 const navbar = $('.bottom-header');
 const navbarOffset = navbar.position().top;
 const mobileBar = $('.mobile-menu-container')
+const mobileBarOffset= mobileBar.position().top
 
 const headerLogo = $('.bottom-header img')
 const toTopIcon = $('.to-top-icon')
 
 $(window).scroll(()=> {
     const scrollPosition = $(window).scrollTop();
-    //console.log("Scroll Position:", scrollPosition)
-    //console.log("Navbar Offset:", navbarOffset);
-
-    if (window.innerWidth < 600) {
-        if (scrollPosition >= navbarOffset) {
+    
+    if (mobileBar.css("display") === "block") {
+        if (scrollPosition >= mobileBarOffset) {
             mobileBar.addClass('sticky');
             navbar.removeClass('sticky');
             headerLogo.attr("src","images/white-logo.png")
